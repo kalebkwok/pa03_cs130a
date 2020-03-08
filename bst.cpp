@@ -27,8 +27,8 @@ class BST{
     node* successor(node *current);
     void insert(int value);
     void insert(node *root,int value);
-    bool remove(int value);
     node* deleteNode(node* root,int value);
+    bool remove(int value);
     node* Search(int value);
     void  access(int value);
     void INorder(node* root);
@@ -115,7 +115,7 @@ node* findmin(node* t){
         return findmin(t->left);
 }
 
-node* deleteNode(node* current, int value){
+node* BST::deleteNode(node* current, int value){
     node *temp;
     if(current==NULL)
         return NULL;
@@ -146,7 +146,7 @@ bool BST::remove(int value){
     return false;
     }
     else{
-        this->root=deleteNode(root,value);
+        deleteNode(root,value);
         cout<<"Element deleted"<<endl;
         return true;
     }
